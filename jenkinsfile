@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    tools{
+        jdk 'jdk17'
+        terraform 'terraform'
+    }
+    stages{
+        stage('clean Workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+
+        stage('checkout from Git'){
+            steps{
+                git branch: 'main', url: 'https://github.com/Aj7Ay/TERRAFORM-JENKINS-CICD.git'
+            }
+        }
+    }
+}
