@@ -13,7 +13,13 @@ pipeline{
 
         stage('checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Aj7Ay/TERRAFORM-JENKINS-CICD.git'
+                git 'https://github.com/Ravindra0849/Jenkins.git'
+            }
+        }
+
+        stage('Terraform version'){
+                steps{
+                sh 'terraform --version'
             }
         }
     }
